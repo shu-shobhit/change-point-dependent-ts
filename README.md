@@ -11,6 +11,7 @@ Code for the simulations and figures of the M.Tech thesis "Towards Improved Chan
 | `cpd/ks.py` | Limit distribution of the KS statistic: density, critical values, simulation |
 | `cpd/plotting.py` | Plot style shared by all figures |
 | `scripts/background_figures.py` | Figures and tables for the Background chapter |
+| `notebooks/null_vs_phi.ipynb` | Size and power of the FB, DDB1, SN and KS (true sigma) tests against the AR(1) coefficient, as in Table 2 and Figure 2 of Shao and Zhang (2010). Saves its plots to `figures/` |
 | `figures/` | Figures used in the thesis |
 
 The test statistics (CUSUM, the kernel long-run variance estimators and the self-normalized statistic) will be added to `cpd/` with the simulation study.
