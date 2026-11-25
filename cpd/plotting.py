@@ -12,11 +12,13 @@ TEXT_WIDTH_IN = 15 / 2.54
 # deficiencies. The first three match the test colours in the notebook.
 COLORS = ('#0072B2', '#E69F00', '#009E73', '#CC79A7', '#56B4E9', '#D55E00')
 
-# One look per test, as in the notebook. KS with the true sigma is the
-# dashed black reference.
+# One look per test, as in the notebook for FB, DDB1 and SN. KS with the
+# true sigma is the dashed black reference.
 TEST_STYLE = {
     'FB': dict(color=COLORS[0], marker='o'),
     'DDB1': dict(color=COLORS[1], marker='s'),
+    'DDB2': dict(color=COLORS[3], marker='D'),
+    'DDB-JX': dict(color=COLORS[5], marker='v'),
     'SN': dict(color=COLORS[2], marker='^'),
     'KS (true sigma)': dict(color='black', ls='--'),
 }

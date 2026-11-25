@@ -10,13 +10,15 @@ Code for the simulations and figures of the M.Tech thesis "Towards Improved Chan
 | `cpd/dependence.py` | Sample autocovariances and autocorrelations; AR(1) long-run variance |
 | `cpd/ks.py` | Limit distribution of the KS statistic: density, critical values, simulation |
 | `cpd/statistics.py` | CUSUM process and the KS statistic |
+| `cpd/lrv.py` | Kernel long-run variance estimators (Bartlett, QS), Andrews bandwidths, and the FB, DDB1, DDB2 and DDB-JX estimates |
 | `cpd/plotting.py` | Plot style shared by all figures |
 | `scripts/background_figures.py` | Figures and tables for the Background chapter |
 | `scripts/cusum_figures.py` | Figures and the size table for the CUSUM chapter |
+| `scripts/lrv_figures.py` | Figures and numbers for the long-run variance chapter |
 | `notebooks/null_vs_phi.ipynb` | Size and power of the FB, DDB1, SN and KS (true sigma) tests against the AR(1) coefficient, as in Table 2 and Figure 2 of Shao and Zhang (2010). Saves its plots to `figures/` |
 | `figures/` | Figures used in the thesis |
 
-The kernel long-run variance estimators and the self-normalized statistic will be added to `cpd/` with the simulation study.
+The self-normalized statistic will be added to `cpd/` with the simulation study. Until then the notebook keeps its own copies of the functions.
 
 ## Running
 
@@ -26,6 +28,7 @@ Python 3.10 or later.
 pip install -r requirements.txt
 python -m scripts.background_figures
 python -m scripts.cusum_figures
+python -m scripts.lrv_figures
 ```
 
 Run the scripts from the repository root, so that `cpd` can be imported. Every script uses a fixed seed, so the figures and the printed tables are reproducible.
