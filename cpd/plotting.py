@@ -20,6 +20,7 @@ TEST_STYLE = {
     'DDB2': dict(color=COLORS[3], marker='D'),
     'DDB-JX': dict(color=COLORS[5], marker='v'),
     'SN': dict(color=COLORS[2], marker='^'),
+    'naive SN': dict(color=COLORS[4], marker='x'),
     'KS (true sigma)': dict(color='black', ls='--'),
 }
 
