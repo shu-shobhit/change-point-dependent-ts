@@ -73,8 +73,7 @@ def plot_ar1_paths(path: pathlib.Path) -> None:
     axes[1, 0].set_ylim(-0.3, 1.05)
     axes[1, -1].legend(loc='upper right')
     fig.tight_layout()
-    fig.savefig(path)
-    plt.close(fig)
+    plotting.save_figure(fig, path)
 
 
 def plot_brownian_paths(path: pathlib.Path) -> None:
@@ -96,8 +95,7 @@ def plot_brownian_paths(path: pathlib.Path) -> None:
         ax.set_xlabel('$r$')
         ax.set_xlim(0, 1)
     fig.tight_layout()
-    fig.savefig(path)
-    plt.close(fig)
+    plotting.save_figure(fig, path)
 
 
 def plot_ks_density(path: pathlib.Path, draws: np.ndarray) -> None:
@@ -108,7 +106,7 @@ def plot_ks_density(path: pathlib.Path, draws: np.ndarray) -> None:
 
     fig, ax = plt.subplots(figsize=(0.7 * plotting.TEXT_WIDTH_IN, 2.6))
     ax.hist(draws, bins=60, range=(0, 3.5), density=True, color='0.85',
-            label=f'simulated ($m = {KS_SIM_STEPS}$)')
+            label=f'simulated ($n = {KS_SIM_STEPS}$)')
     ax.plot(x, ks.pdf(x), color=plotting.COLORS[0],
             label='$\\sup \\, |B(r) - rB(1)|$')
     ax.plot(x, 2 * stats.norm.pdf(x), color=plotting.COLORS[1], ls='--',
@@ -124,8 +122,7 @@ def plot_ks_density(path: pathlib.Path, draws: np.ndarray) -> None:
     ax.set_ylabel('density')
     ax.legend(loc='upper right', bbox_to_anchor=(1, 0.85))
     fig.tight_layout()
-    fig.savefig(path)
-    plt.close(fig)
+    plotting.save_figure(fig, path)
 
 
 def print_lrv_table() -> None:
@@ -144,7 +141,7 @@ def print_critical_values(draws: np.ndarray) -> None:
     x = np.array([0.5, 1.0, 1.5, 2.0])
     gap = np.abs(ks.cdf_series(x) - ks.cdf(x)).max()
     print(f'series formula against scipy, largest gap: {gap:.1e}')
-    print(f'KS critical values (simulated: m = {KS_SIM_STEPS}, '
+    print(f'KS critical values (simulated: n = {KS_SIM_STEPS}, '
           f'R = {KS_SIM_REPS})')
     print('alpha   exact   simulated   MC s.e.')
     for alpha in ALPHAS:
