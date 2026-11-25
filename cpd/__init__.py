@@ -4,5 +4,6 @@ Modules:
     processes: simulated AR(1) series and Brownian motion paths.
     dependence: autocovariances and the long-run variance of AR(1).
     ks: the limit distribution of the Kolmogorov-Smirnov (KS) statistic.
+    statistics: the CUSUM process and the KS statistic.
     plotting: the plot style shared by all figures.
 """
